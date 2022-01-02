@@ -1,0 +1,36 @@
+{
+  "name": "babullentinbot",
+  "version": "1.0.0",
+  "description": "This bot magically delivers the weekly service bulletin right to your telegram doorstep :-)",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gcp-build": "tsc",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiachen247/babullentinbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiachen247/babullentinbot/issues"
+  },
+  "homepage": "https://github.com/jiachen247/babullentinbot#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.6.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.6",
+    "date-format": "^3.0.0",
+    "dotenv": "^10.0.0",
+    "telegraf": "^4.5.2"
+  }
+}
