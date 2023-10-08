@@ -4,9 +4,7 @@ import format from "date-format";
 
 dotenv.config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
-
 const port = Number(process.env.PORT) || 8080;
-const adminId = Number(process.env.ADMIN_ID);
 
 const BULLETIN_LINK =
   "https://www.bukitarang.church/wp-content/uploads/2021/01/BA-Weekly-Bulletin-.pdf";
@@ -41,43 +39,39 @@ bot.launch({
   },
 });
 
+bot.command("start", (ctx) => {
+  ctx.reply(`Hellos ${ctx.message.from.first_name}! 🌟`);
+});
+
 bot.command("bulletin", (ctx) => {
-  ctx.replyWithChatAction("upload_document");
   ctx.replyWithDocument(
     {
       url: BULLETIN_LINK,
       filename: buildBulletinFilename(),
     },
-    { caption: "Here you go!!" }
+    { caption: "here you go!! 🌻" }
   );
 });
 
 bot.command("outline", (ctx) => {
-  ctx.replyWithChatAction("upload_document");
   ctx.replyWithDocument(
     {
       url: OUTLINE_PDF_LINK,
       filename: buildOutlinePdfFilename(),
     },
-    { caption: "Here you go!!" }
+    { caption: "here you go!! 🌻" }
   );
 });
 
 bot.command("outlinedoc", (ctx) => {
-  ctx.replyWithChatAction("upload_document");
   ctx.replyWithDocument(
     {
       url: OUTLINE_WORD_LINL,
       filename: buildOutlineDocFilename(),
     },
-    { caption: "Here you go!!" }
+    { caption: "here you go!! 🌻" }
   );
 });
 
-bot.on("text", (ctx) => {
-  ctx.reply(`Hellos ${ctx.message.from.first_name}!`);
-});
-
-// Enable graceful stop
 process.once("SIGINT", () => bot.stop("SIGINT"));
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
